@@ -6,7 +6,7 @@ var primaryArray = arrayOf( CharArray(9) , CharArray(9) , CharArray(9) , CharArr
         CharArray(9) , CharArray(9) , CharArray(9) , CharArray(9))
 var numberOfMines: Int = 0
 var numberOfSurroundingBombs = 0
-val errors = charArrayOf('1', '2', '3', '4', '5', '6', '7', '8')
+val numbers = charArrayOf('1', '2', '3', '4', '5', '6', '7', '8')
 var finalMiensField =  arrayOf( CharArray(9) , CharArray(9) , CharArray(9) , CharArray(9) , CharArray(9) ,
         CharArray(9) , CharArray(9) , CharArray(9) , CharArray(9))
 
@@ -59,7 +59,7 @@ class Playing {
                                 floodFill(x, y)
                                 revealingHints()
                             }
-                            primaryArray[x][y] in errors -> {
+                            primaryArray[x][y] in numbers -> {
                                 do {
                                     primaryArray[x][y] = '.'
                                     printingDots()
@@ -88,7 +88,7 @@ class Playing {
                             floodFill(x, y)
                             revealingHints()
                         }
-                        primaryArray[x][y] in errors -> {
+                        primaryArray[x][y] in numbers -> {
                             finalMiensField[x][y] = primaryArray[x][y]
                         }
                         finalMiensField[x][y] == '*' -> {
